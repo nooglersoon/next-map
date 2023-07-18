@@ -1,10 +1,10 @@
-import Card from '@/common/components/Card'
+import Home from '@/modules/Home/'
 import Container from '@/common/components/Container'
 
-export default function Home() {
+export default function Index() {
   return (
     <Container>
-      <Card/>
+      <Home/>
     </Container>
   )
 }

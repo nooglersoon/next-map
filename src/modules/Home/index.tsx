@@ -3,7 +3,7 @@ import Image from "next/image";
 import Title from "@/common/components/Title";
 import Content from "@/common/components/Content";
 
-export default function Card() {
+export default function Home() {
 
   return (
     <div className="group max-w-md my-auto border border-black border-opacity-5 mx-auto rounded-xl shadow-lg bg-white">
