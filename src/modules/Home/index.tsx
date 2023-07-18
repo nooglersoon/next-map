@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Title from "@/common/components/Title";
 import Content from "@/common/components/Content";
+import ListItem from "@/modules/Home/components/ListItem";
 
 export default function Home() {
 
@@ -21,6 +22,16 @@ export default function Home() {
       <div className="px-4 pt-6 pb-8 flex flex-col gap-4">
         <Title title={"Hello"} />
         <Content>
+            <div className="flex flex-col gap-4 overflow-auto px-2">
+                <ListItem 
+                    title={""} 
+                    url={""} 
+                    imageUrl={""} 
+                    cost={""} location={{
+                          lat: 0,
+                          long: 0
+                      }}/>
+            </div>
         </Content>
       </div>
       <Footer />
