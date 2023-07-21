@@ -3,10 +3,11 @@ import dynamic from "next/dynamic";
 import Title from "@/common/components/Title";
 import Content from "@/common/components/Content";
 import ListItem from "@/modules/Home/components/ListItem";
+import { spkluList } from "@/data/data"
 
 export default function Home() {
 
-    const MapWithNoSSR = dynamic(() => import("../Home/components/Map"), {
+    const MapWithNoSSR = dynamic(() => import("./components/Map"), {
         ssr: false
       });
 
@@ -21,14 +22,18 @@ export default function Home() {
         <Title title={"EV Station at Bali"} />
         <Content>
             <div className="flex flex-col gap-4 overflow-auto px-2">
-                <ListItem 
-                    title={""} 
-                    url={""} 
-                    imageUrl={""} 
-                    cost={""} location={{
-                          lat: 0,
-                          long: 0
-                      }}/>
+                {
+                    spkluList.features.map((spklu)=> {
+                        return <ListItem 
+                        title={spklu.properties!.Name} 
+                        url={""} 
+                        imageUrl={""} 
+                        cost={""} location={{
+                              lat: 0,
+                              long: 0
+                          }}/>
+                    })
+                }
             </div>
         </Content>
       </div>
