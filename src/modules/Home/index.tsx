@@ -34,6 +34,7 @@ export default function Home() {
             {
               spkluList.features.map((spklu, i) => {
                 return <button
+                  key={i}
                   onClick={() => {
                     let geom: GeoJSON.GeoJsonProperties = spklu.geometry;
                     setLat(geom.coordinates[1])
