@@ -7,34 +7,34 @@ import { spkluList } from "@/data/data"
 
 export default function Home() {
 
-    const MapWithNoSSR = dynamic(() => import("./components/Map"), {
-        ssr: false
-      });
+  const MapWithNoSSR = dynamic(() => import("./components/Map"), {
+    ssr: false
+  });
 
   return (
     <div className="group max-w-md my-auto border border-black border-opacity-5 mx-auto rounded-xl shadow-lg bg-white">
       <div className="relative h-[300px]">
         <div className="relative h-full overflow-hidden rounded-t-xl">
-         <MapWithNoSSR />
+          <MapWithNoSSR />
         </div>
       </div>
       <div className="px-4 pt-6 pb-8 flex flex-col gap-4">
         <Title title={"EV Station at Bali"} />
         <Content>
-            <div className="flex flex-col gap-4 overflow-auto px-2">
-                {
-                    spkluList.features.map((spklu)=> {
-                        return <ListItem 
-                        title={spklu.properties!.Name} 
-                        url={""} 
-                        imageUrl={""} 
-                        cost={""} location={{
-                              lat: 0,
-                              long: 0
-                          }}/>
-                    })
-                }
-            </div>
+          <div className="flex flex-col gap-4 overflow-auto px-2">
+            {
+              spkluList.features.map((spklu) => {
+                return <ListItem
+                  title={spklu.properties!.Name}
+                  url={""}
+                  imageUrl={""}
+                  cost={""} location={{
+                    lat: 0,
+                    long: 0
+                  }} />
+              })
+            }
+          </div>
         </Content>
       </div>
       <Footer />

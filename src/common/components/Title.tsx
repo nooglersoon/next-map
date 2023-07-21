@@ -6,7 +6,7 @@ type Props = {
 
 export default function Title({ title }: Props) {
   return (
-    <p className="text-gray-900 font-bold text-2xl">
+    <p className="text-gray-900 font-bold text-xl">
       {title}.
     </p>
   )
